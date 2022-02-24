@@ -20,7 +20,6 @@
         <p class="d-flex justify-content-center" *ngIf="entities.length === 0">No search results</p>
         <ol class="list-group" *ngIf="entities.length">
             <li class="list-group-item" *ngFor="let entity of entities; index as i">
-                <!-- <div class="entity-h"><h6 class="list-group-item-heading" [innerHTML]="entity.title"></h6> <small> - {{ entity.theCode }}</small></div> -->
                 <div class="p-2 rounded d-flex flex-row align-items-center">
                     <div class="p-1 px-4 d-flex flex-column align-items-center score rounded"> 
                         <span class="d-block char text-success">Score</span> <span class="text-success">{{ (entity.score * 100).toFixed()}}</span> 
@@ -29,23 +28,13 @@
                         <h6 class="heading1 list-group-item-heading" [innerHTML]="entity.title"></h6> <span>{{ entity.theCode }}</span>
                         <hr/>
                         <ul *ngFor="let pv of entity.matchingPVs index as i">
-                            <li [innerHtml]="pv.label" >
-                                <!-- <p [innerHtml]="pv.label"></p> -->
-                            </li>
+                            <li [innerHtml]="pv.label"></li>
                             <!-- <div class="col-md-3">
                             <button class="btn btn-link sm" (click)="viewMore(pv.foundationUri)">View More</button>
                             </div> -->
                         </ul>
                     </div>
                 </div>
-                <!-- <div class="row" *ngFor="let pv of entity.matchingPVs index as i">
-                    <div class="col-sm-10">
-                        <p [innerHtml]="pv.label"></p>
-                    </div>
-                    <div class="col-sm-2">
-                        <button class="btn btn-link sm" (click)="viewMore(pv.foundationUri)">View More</button>
-                    </div>
-                </div> -->
             </li>
         </ol>
     </div>

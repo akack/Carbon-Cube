@@ -1,14 +1,13 @@
 <div class="container">
-    <br/>
+    <br />
     <div class="d-flex justify-content-center" *ngIf="loading">
         <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
+            <span class="visually-hidden">Loading...</span>
         </div>
     </div>
-
     <div *ngIf="!loading">
         <h3>{{ entity.title }} - <small>{{ code }}</small></h3>
-        <hr/>
+        <hr />
         <p>Release ID: {{ entity.releaseId }}</p>
         <p>Release Date: {{ entity.releaseDate }}</p>
         <div *ngIf="entity.child.length > 0">
